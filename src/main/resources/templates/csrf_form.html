@@ -1,0 +1,13 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>CSRF表单</title>
+</head>
+<body>
+<form id="csrf" method="post" action="./commit">
+    <input type="text" name="name" id ="name"/><br>
+    <input type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- 登录页（/templates/login/page.html）-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <title>登录页面</title>
+</head>
+<body>
+<form id="login_form" method="post" action="/login/page">
+    <p>名称：<input id="username" name="username" type="text" value=""/></p>
+    <p>密码：<input id="password" name="password" type="password" value=""/></p>
+    <p>记住我：<input id="remember_me" name="remember-me" type="checkbox"></p>
+    <!-- 防止CSRF攻击-->
+    <input type="hidden" th:value="${_csrf.token}" th:name="${_csrf.parameterName}"/>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>
